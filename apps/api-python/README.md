@@ -1,4 +1,4 @@
-# LaCleoOmnia OMS - Python FastAPI Backend
+# OmniCommerce - Python FastAPI Backend
 
 ## 🚀 Quick Start
 

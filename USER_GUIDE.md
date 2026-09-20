@@ -1,6 +1,6 @@
-# LaCleoOmnia OMS - User Guide
+# OmniCommerce OMS - User Guide
 
-Welcome to LaCleoOmnia! This guide will help you get started with managing your orders, inventory, and multiple store integrations.
+Welcome to OmniCommerce! This guide will help you get started with managing your orders, inventory, and multiple store integrations.
 
 ## 📋 Table of Contents
 

@@ -1,4 +1,4 @@
-This is the **LaCleoOmnia** frontend (Next.js): Order & Inventory Management with Shopify, Delhivery, Selloship, and profit analytics.
+This is the **OmniCommerce** frontend (Next.js): Order & Inventory Management with Shopify, Delhivery, Selloship, and profit analytics.
 
 ## Getting Started
 

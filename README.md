@@ -1,8 +1,8 @@
-# LaCleoOmnia - Order Management System
+# OmniCommerce
 
 ## For End Users (Store Owners)
 
-Welcome to LaCleoOmnia! This is your complete order management solution.
+Welcome to OmniCommerce! This is your complete order management solution.
 
 ### 📚 Documentation
 

@@ -1,6 +1,6 @@
-# LaCleoOmnia – Database Schema
+# OmniCommerce – Database Schema
 
-This document describes the database schema used by the LaCleoOmnia OMS API (PostgreSQL). It is derived from `apps/api-python/app/models.py` and Alembic migrations.
+This document describes the database schema used by the OmniCommerce OMS API (PostgreSQL). It is derived from `apps/api-python/app/models.py` and Alembic migrations.
 
 ---
 
