@@ -144,9 +144,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   href="/"
                   onClick={closeSidebar}
                   className="text-xl font-bold text-blue-600 hover:text-blue-700 block truncate"
-                  title="LaCleoOmnia"
+                  title="OmniCommerce"
                 >
-                  {sidebarCollapsed ? "L" : "LaCleoOmnia"}
+                  {sidebarCollapsed ? "OC" : "OmniCommerce"}
                 </Link>
                 {!sidebarCollapsed && <p className="mt-1 text-xs text-slate-500">Order Management System</p>}
               </div>

@@ -1,14 +1,14 @@
-# Getting Started with LaCleoOmnia
+# Getting Started with OmniCommerce
 
 ## Welcome! 👋
 
-This 5-minute guide will get you up and running with LaCleoOmnia.
+This 5-minute guide will get you up and running with OmniCommerce.
 
 ---
 
 ## Step 1: Create Your Account (1 minute)
 
-1. Visit your LaCleoOmnia dashboard
+1. Visit your OmniCommerce  dashboard
 2. Click **"Sign up"**
 3. Enter:
    - Your name

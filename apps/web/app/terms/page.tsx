@@ -22,7 +22,7 @@ export default function TermsOfServicePage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">1. Agreement to Terms</h2>
             <p className="text-slate-600 leading-7 mb-4">
-              By accessing or using LaCleoOmnia ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
+              By accessing or using OmniCommerce ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
             </p>
             <p className="text-slate-600 leading-7">
               These Terms apply to all users of the Service, including merchants, administrators, and any other users who access or use the Service.
@@ -32,7 +32,7 @@ export default function TermsOfServicePage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">2. Description of Service</h2>
             <p className="text-slate-600 leading-7 mb-4">
-              LaCleoOmnia is an Order Management System (OMS) that provides:
+              OmniCommerce is an Order Management System (OMS) that provides:
             </p>
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
               <li>Unified order management across multiple marketplaces</li>
@@ -106,7 +106,7 @@ export default function TermsOfServicePage() {
 
             <h3 className="text-xl font-semibold text-slate-800 mb-3">6.2 Our Content</h3>
             <p className="text-slate-600 leading-7">
-              All content, features, and functionality of the Service are owned by LaCleoOmnia and are protected by copyright, trademark, and other intellectual property laws.
+              All content, features, and functionality of the Service are owned by OmniCommerce and are protected by copyright, trademark, and other intellectual property laws.
             </p>
           </section>
 
@@ -158,7 +158,7 @@ export default function TermsOfServicePage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">10. Indemnification</h2>
             <p className="text-slate-600 leading-7">
-              You agree to indemnify and hold harmless LaCleoOmnia, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the Service, violation of these Terms, or infringement of any rights of another.
+              You agree to indemnify and hold harmless OmniCommerce, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the Service, violation of these Terms, or infringement of any rights of another.
             </p>
           </section>
 
@@ -210,7 +210,7 @@ export default function TermsOfServicePage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">15. Entire Agreement</h2>
             <p className="text-slate-600 leading-7">
-              These Terms, together with our Privacy Policy, constitute the entire agreement between you and LaCleoOmnia regarding the Service and supersede all prior agreements and understandings.
+              These Terms, together with our Privacy Policy, constitute the entire agreement between you and OmniCommerce regarding the Service and supersede all prior agreements and understandings.
             </p>
           </section>
 
@@ -220,7 +220,7 @@ export default function TermsOfServicePage() {
               If you have questions about these Terms, please contact us:
             </p>
             <div className="bg-slate-50 p-4 rounded-lg">
-              <p className="text-slate-700 font-medium">LaCleoOmnia</p>
+              <p className="text-slate-700 font-medium">OmniCommerce</p>
               <p className="text-slate-600">Email: legal@lacleoomnia.com</p>
               <p className="text-slate-600">Support: support@lacleoomnia.com</p>
             </div>

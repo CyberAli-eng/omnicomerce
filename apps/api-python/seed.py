@@ -1,44 +1,52 @@
 """
 Database seed script
 """
+import sys
+import os
 import asyncio
 from sqlalchemy.orm import Session
 from app.database import SessionLocal, engine, Base
 from app.models import User, UserRole, Channel, ChannelType, Warehouse
 from app.auth import get_password_hash
+from app.config import settings
 
 def seed_database():
     """Seed the database with initial data"""
     db = SessionLocal()
     
+    admin_email = os.getenv("SEED_ADMIN_EMAIL", "admin@local")
+    admin_password = os.getenv("SEED_ADMIN_PASSWORD", "Admin@123")
+    staff_email = os.getenv("SEED_STAFF_EMAIL", "staff@local")
+    staff_password = os.getenv("SEED_STAFF_PASSWORD", "Staff@123")
+    
     try:
         # Create admin user
-        admin = db.query(User).filter(User.email == "admin@local").first()
+        admin = db.query(User).filter(User.email == admin_email).first()
         if not admin:
             admin = User(
-                email="admin@local",
+                email=admin_email,
                 name="Admin User",
-                password_hash=get_password_hash("Admin@123"),
+                password_hash=get_password_hash(admin_password),
                 role=UserRole.ADMIN
             )
             db.add(admin)
-            print("✅ Created admin user: admin@local")
+            print(f"✅ Created admin user: {admin_email}")
         else:
-            print("✅ Admin user already exists")
+            print(f"✅ Admin user ({admin_email}) already exists")
         
         # Create staff user
-        staff = db.query(User).filter(User.email == "staff@local").first()
+        staff = db.query(User).filter(User.email == staff_email).first()
         if not staff:
             staff = User(
-                email="staff@local",
+                email=staff_email,
                 name="Staff User",
-                password_hash=get_password_hash("Staff@123"),
+                password_hash=get_password_hash(staff_password),
                 role=UserRole.STAFF
             )
             db.add(staff)
-            print("✅ Created staff user: staff@local")
+            print(f"✅ Created staff user: {staff_email}")
         else:
-            print("✅ Staff user already exists")
+            print(f"✅ Staff user ({staff_email}) already exists")
         
         # Create channels
         channels = [
@@ -73,8 +81,8 @@ def seed_database():
         db.commit()
         print("\n🎉 Seeding completed!")
         print("\n📝 Login credentials:")
-        print("   Admin: admin@local / Admin@123")
-        print("   Staff: staff@local / Staff@123")
+        print(f"   Admin: {admin_email}")
+        print(f"   Staff: {staff_email}")
         
     except Exception as e:
         print(f"❌ Seeding failed: {e}")
@@ -84,6 +92,12 @@ def seed_database():
         db.close()
 
 if __name__ == "__main__":
+    force = "--force" in sys.argv
+    if settings.IS_PRODUCTION and not force:
+        print("🛑 Refusing to run seed.py in PRODUCTION environment without --force flag!")
+        print("   If you intended to seed production data, set SEED_ADMIN_EMAIL & SEED_ADMIN_PASSWORD and run with --force.")
+        sys.exit(1)
+
     print("🌱 Starting database seeding...")
     print("")
     
@@ -104,7 +118,6 @@ if __name__ == "__main__":
         print("      ./setup_local_db.sh")
         print("")
         print("   3. Check your DATABASE_URL in .env file")
-        print("      Should be: postgresql://admin:password@localhost:5432/lacleo_omnia")
         exit(1)
     
     print("")

@@ -62,8 +62,8 @@ export default function Header() {
           href="/"
           className="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900 transition-colors hover:text-blue-600"
         >
-          <span className="text-blue-600">LaCleo</span>
-          <span>Omnia</span>
+          <span className="text-blue-600">Omni</span>
+          <span>Commerce</span>
         </Link>
 
         <div className="flex items-center gap-3">

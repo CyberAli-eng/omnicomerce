@@ -1,5 +1,5 @@
 """
-LaCleoOmnia OMS - FastAPI Backend
+OmniCommerce OMS - FastAPI Backend
 """
 import asyncio
 import os
@@ -49,7 +49,7 @@ logger = logging.getLogger(__name__)
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="LaCleoOmnia OMS API",
+    title="OmniCommerce OMS API",
     description="Order Management System API",
     version="1.0.0",
     docs_url="/docs" if settings.IS_DEVELOPMENT else None,  # Disable docs in production
@@ -57,7 +57,7 @@ app = FastAPI(
 )
 
 # Log startup information
-logger.info(f"🚀 Starting LaCleoOmnia API")
+logger.info(f"🚀 Starting OmniCommerce API")
 logger.info(f"📊 Environment: {settings.ENV}")
 logger.info(f"🌐 Production: {settings.IS_PRODUCTION}")
 logger.info(f"☁️  Cloud: {settings.IS_CLOUD}")
@@ -66,6 +66,8 @@ logger.info(f"🔗 Host: {settings.HOST}:{settings.PORT}")
 # Startup config validation (warn only)
 if settings.IS_PRODUCTION and getattr(settings, "JWT_SECRET", "").strip() in ("", "supersecret_fallback_key_change_in_production"):
     logger.warning("⚠️ JWT_SECRET is default or empty in production. Set a strong JWT_SECRET in environment.")
+if settings.IS_PRODUCTION and getattr(settings, "ENCRYPTION_KEY", "").strip() in ("", "your-32-character-encryption-key!!"):
+    logger.critical("⚠️ ENCRYPTION_KEY is using the default public string in production! Sensitive credentials will be insecure. Set a random 32-character ENCRYPTION_KEY.")
 if not (getattr(settings, "DATABASE_URL", "") or "").strip():
     logger.warning("⚠️ DATABASE_URL is not set. Database operations will fail.")
 if settings.IS_PRODUCTION and not (os.getenv("ALLOWED_ORIGINS", "") or "").strip():

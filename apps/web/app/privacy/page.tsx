@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-slate-900 mb-4">1. Introduction</h2>
             <p className="text-slate-600 leading-7 mb-4">
-              LaCleoOmnia ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Order Management System (OMS) platform, including our Shopify app integration.
+              OmniCommerce ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Order Management System (OMS) platform, including our Shopify app integration.
             </p>
             <p className="text-slate-600 leading-7">
               By using our services, you agree to the collection and use of information in accordance with this policy.
@@ -183,7 +183,7 @@ export default function PrivacyPolicyPage() {
               If you have questions about this Privacy Policy or our data practices, please contact us:
             </p>
             <div className="bg-slate-50 p-4 rounded-lg">
-              <p className="text-slate-700 font-medium">LaCleoOmnia</p>
+              <p className="text-slate-700 font-medium">OmniCommerce</p>
               <p className="text-slate-600">Email: privacy@lacleoomnia.com</p>
               <p className="text-slate-600">Support: support@lacleoomnia.com</p>
             </div>

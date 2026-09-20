@@ -6,7 +6,7 @@ import ConditionalLayout from "./components/ConditionalLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LaCleoOmnia | Profit & Ops Engine",
+  title: "OmniCommerce | Profit & Ops Engine",
   description:
     "Single source of truth for D2C net profit. Live per-order profit, RTO & lost shipment tracking, and settlement reconciliation for Indian brands.",
 };

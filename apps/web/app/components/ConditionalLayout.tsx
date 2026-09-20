@@ -21,7 +21,7 @@ export default function ConditionalLayout({
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <Link href="/" className="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                <span className="text-blue-600">LaCleo</span>Omnia
+                <span className="text-blue-600">Omni</span>Commerce
               </Link>
               <div className="flex flex-wrap items-center gap-6">
                 <Link href="/privacy" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
@@ -31,7 +31,7 @@ export default function ConditionalLayout({
                   Terms of Service
                 </Link>
                 <span className="text-sm text-slate-400">
-                  © {new Date().getFullYear()} LaCleoOmnia. All rights reserved.
+                  © {new Date().getFullYear()} OmniCommerce. All rights reserved.
                 </span>
               </div>
             </div>

@@ -28,7 +28,7 @@ class Settings:
     PORT = int(os.getenv("PORT", 8000))
     
     # Database
-    DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://admin:password@localhost:5432/lacleo_omnia?schema=public")
+    DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://admin:password@localhost:5432/omnicommerce?schema=public")
     
     # Authentication
     JWT_SECRET = os.getenv("JWT_SECRET", "supersecret_fallback_key_change_in_production")
@@ -137,7 +137,7 @@ class Settings:
     SMTP_USER = os.getenv("SMTP_USER", "")
     SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")
     SMTP_USE_TLS = os.getenv("SMTP_USE_TLS", "true").lower() in ("1", "true", "yes")
-    EMAIL_FROM = os.getenv("EMAIL_FROM", "noreply@lacleoomnia.com")
+    EMAIL_FROM = os.getenv("EMAIL_FROM", "noreply@omnicommerce.com")
     
     def __str__(self):
         return f"Settings(ENV={self.ENV}, IS_PRODUCTION={self.IS_PRODUCTION}, IS_CLOUD={self.IS_CLOUD})"

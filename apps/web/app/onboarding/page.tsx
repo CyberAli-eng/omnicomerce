@@ -83,7 +83,7 @@ export default function OnboardingPage() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-lg p-8">
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">Welcome to LaCleoOmnia</h1>
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">Welcome to OmniCommerce</h1>
           <p className="text-slate-600 mb-8">Let's get your store set up in a few simple steps</p>
 
           {/* Progress Steps */}

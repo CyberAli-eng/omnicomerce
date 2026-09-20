@@ -203,9 +203,9 @@ async def confirm_order(
         )
     
     # Check stock availability
-    warehouse = db.query(Warehouse).filter(Warehouse.name == "Main Warehouse").first()
+    warehouse = get_default_warehouse(db)
     if not warehouse:
-        raise HTTPException(status_code=500, detail="Default warehouse not found")
+        raise HTTPException(status_code=500, detail="No warehouse configured. Create a warehouse or set DEFAULT_WAREHOUSE_NAME / DEFAULT_WAREHOUSE_ID.")
     
     for item in items:
         if not item.variant_id:
@@ -285,12 +285,15 @@ async def ship_order(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Ship order"""
+    """Ship order (only for orders belonging to the current user)."""
     from app.models import Shipment, ShipmentStatus
     
+    account_ids = [ca.id for ca in db.query(ChannelAccount).filter(ChannelAccount.user_id == current_user.id).all()]
     order = db.query(Order).filter(Order.id == order_id).first()
     if not order:
         raise HTTPException(status_code=404, detail="Order not found")
+    if order.channel_account_id not in account_ids:
+        raise HTTPException(status_code=403, detail="Access denied")
     
     if order.status != OrderStatus.PACKED:
         raise HTTPException(

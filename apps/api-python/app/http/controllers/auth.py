@@ -140,14 +140,16 @@ async def forgot_password(body: ForgotPasswordRequest, db: Session = Depends(get
     frontend_url = (getattr(settings, "FRONTEND_URL", None) or "").strip().rstrip("/") or "http://localhost:3000"
     reset_link = f"{frontend_url}/reset-password?token={token}"
 
-    # Send email when SMTP is configured; otherwise user gets link from response
+    # Send email when SMTP is configured
     sent = send_password_reset_email(user.email, reset_link, getattr(user, "name", None))
-    out = {
-        "message": "If an account exists with this email, you will receive a password reset link.",
-        "reset_link": reset_link,
-    }
-    if sent:
-        out["message"] = "A password reset link has been sent to your email."
+    
+    msg = "A password reset link has been sent to your email." if sent else "If an account exists with this email, you will receive a password reset link."
+    out = {"message": msg}
+
+    # Only leak reset link in API response during development mode for local testing
+    if settings.IS_DEVELOPMENT:
+        out["reset_link"] = reset_link
+
     return out
 
 
